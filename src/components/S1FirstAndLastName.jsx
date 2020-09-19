@@ -37,7 +37,7 @@ class S1FirstAndLastName extends Component {
               }}
               onFinishFailed={this.onFinishFailed}
             >
-              <h3>Lets Start With your Name</h3>
+              <h3> Start Saving. Lets Start With your Name</h3>
               <br />
               <h5>First Name</h5>
               <Form.Item
