@@ -56,7 +56,7 @@ class S1FirstAndLastName extends Component {
                 <Input  
                   
                   size="large"
-                  placeholder="e.g: john"
+                  placeholder="First Name"
                 />
               </Form.Item>
               <h5>Last Name</h5>
@@ -76,7 +76,7 @@ class S1FirstAndLastName extends Component {
                 <Input 
                    
                   size="large"
-                  placeholder="e.g: Due"
+                  placeholder="Last Name"
                 />
               </Form.Item>
               <Form.Item>

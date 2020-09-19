@@ -20,8 +20,9 @@ class App extends Component {
   state = {
     postData: {
       //extra entries
-      // Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
+      Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
       TYPE: "38",
+      Lead_Id_Token: "",
       Redirect_URL: "",
       SRC: "test",
       Landing_Page: "",
@@ -91,6 +92,12 @@ class App extends Component {
                   First_Name={this.state.postData.First_Name}
                   Last_Name={this.state.postData.Last_Name}
                   setFirstName={(v) => {
+
+                    console.log(document.getElementById('leadid_token').value)
+							console.log(document.getElementsByTagName('script')[0].src)
+							this.setState({ postData: { ...this.state.postData, Driver_1_Zip: value, LeadiD_Token: document.getElementById('leadid_token').value, Trusted_Form_URL: document.getElementById('Trusted_Form_URL_0').value } })
+							console.log(document.getElementById('Trusted_Form_URL_0'));
+
                     this.setState({
                       postData: {
                         ...this.state.postData,
@@ -106,6 +113,7 @@ class App extends Component {
                       }
                     });
                   }}
+
                 />
                 <S2EmailAndPhoneNumber
                   Business_Email={this.state.postData.Business_Email}
