@@ -16,12 +16,13 @@ import S5StateAndZip from "./components/S5StateAndZip";
 import S6BusinessTypeAndEIN from "./components/S6BusinessTypeAndEIN";
 import S7BusinessProfessionAndYears from "./components/S7BusinessProfessionAndYears";
 import S8BusinessRevenueAndNoOfEmployees from "./components/S8BusinessRevenueAndNoOfEmployees";
+import S9Final from "./components/S9Final.jsx";
 class App extends Component {
   state = {
     postData: {
       //extra entries
       Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
-      TYPE: "42",
+      TYPE: "38",
       Sub_ID: "12",
       Pub_ID: "13",
       TCPA_Consent: "Yes",
@@ -100,7 +101,7 @@ class App extends Component {
 
                     console.log(document.getElementById('leadid_token').value)
 							console.log(document.getElementsByTagName('script')[0].src)
-							this.setState({ postData: { ...this.state.postData, Driver_1_Zip: value, LeadiD_Token: document.getElementById('leadid_token').value, Trusted_Form_URL: document.getElementById('Trusted_Form_URL_0').value } })
+							this.setState({ postData: { ...this.state.postData, LeadiD_Token: document.getElementById('leadid_token').value, Trusted_Form_URL: document.getElementById('Trusted_Form_URL_0').value } })
 							console.log(document.getElementById('Trusted_Form_URL_0'));
 
                     this.setState({
@@ -257,7 +258,7 @@ class App extends Component {
                     }
                   });
                 }}/>
-                 
+                 <S9Final/>
               </StepWizard>
             </div>
           </div>
