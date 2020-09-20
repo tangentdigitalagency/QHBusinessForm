@@ -34,30 +34,30 @@ class App extends Component {
       Landing_Page: "quotehound.com",
       IP_Address: "",
       //s1 form fields
-      First_Name: '',
-      Last_Name: '',
+      First_Name: 'as',
+      Last_Name: 'as',
       //S2 form fields
       Business_Phone: '',
-      Business_Email: '',
+      Business_Email: 'test@gmail.com',
       //s3 form fields
-      Business_Name: '',
-      Business_Website: '',
+      Business_Name: 'test',
+      Business_Website: 'test.com',
       //s4 form fields
-      Business_Address: '',
-      Business_City: '',
+      Business_Address: 'ldsakjf',
+      Business_City: 'asdf',
       //s5 form fields
-      Business_State: '',
-      Business_Zip: '',
+      Business_State: 'AK',
+      Business_Zip: '60610',
       //s6 form fields
       Business_Type: '',
       EIN: '',
       EIN_Number: '',
       //s7 form fields
-      Business_Profession: '',
-      Founded: '',
+      Business_Profession: 'asd',
+      Founded: '2012',
       // s8 form fields
-      Revenue: '',
-      Number_Of_Employees: ''
+      Revenue: '12121',
+      Number_Of_Employees: '11'
     },
   };
 

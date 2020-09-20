@@ -1,15 +1,17 @@
 import React, { Component } from "react";
-import { Form,  Button,Input} from "antd";
-import CommonComponents from "./CommonComponents"; 
-import Axios from "axios";  
-
+import { Form, Button, Input } from "antd";
+import CommonComponents from "./CommonComponents";
+import Axios from "axios";
+import XMLParser from 'react-xml-parser';
 class S8BusinessRevenueAndNoOfEmployees extends Component {
-  onFinish = (values) => { 
+  state = {
+    error: ""
+  }
+  onFinish = (values) => {
     this.props.setRevenue(values.Revenue);
     this.props.setNumberOfEmployees(values.Number_Of_Employees);
     console.log("Success:", values);
     this.PostDataOfBusinessInsurance(this.props.postData);
-    
   };
 
   PostDataOfBusinessInsurance = (postData) => {
@@ -17,12 +19,14 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
     Axios.post("https://leads.quotehound.com/genericPostlead.php", null, {
       params: postData,
     })
-      .then((res) => {  
-        console.log(res.data);
-        if(res.data==='Matched'){
+      .then((res) => {
+        var xml = new XMLParser().parseFromString(res.data);
+        if (xml.children[0].value === 'Error') {
+          this.setState({ error: xml.children[1].value });
+        }
+        else if(xml.children[0].value === 'Matched' || xml.children[0].value === 'Unmatched' ){
           this.props.lastStep();
         }
-        this.props.lastStep();
       })
       .catch((err) => {
         if (err) throw err;
@@ -33,6 +37,29 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
     console.log("Failed:", errorInfo);
   };
   render() {
+    {
+      if (this.state.error != "") {
+        return (
+          <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
+            <CommonComponents
+              currentStep={this.props.currentStep}
+              totalSteps={this.props.totalSteps}
+              previousStep={this.props.previousStep}
+            />
+            <div className="d-flex" style={{ minHeight: "60vh" }}>
+              <div
+                className="card-body d-xl-flex justify-content-center align-items-center"
+                align="center"
+                style={{ paddingTop: "0px" }}
+              >
+                <h5>{this.state.error}</h5>
+
+              </div>
+            </div>
+          </div >
+        );
+      }
+    }
     return (
       <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
         <CommonComponents
@@ -44,8 +71,9 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
           <div
             className="card-body d-xl-flex justify-content-center align-items-center"
             align="center"
-            style={{ paddingTop:"0px" }}
+            style={{ paddingTop: "0px" }}
           >
+
             <Form
               name="basic"
               className="mywidth"
@@ -69,7 +97,7 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
                   }
                 ]}
               >
-                <Input  
+                <Input
                   size="large"
                   placeholder="Revenue"
                   type="number"
@@ -87,7 +115,7 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
                   }
                 ]}
               >
-                <Input  
+                <Input
                   size="large"
                   placeholder="Number Of Employees"
                   type="number"
@@ -115,7 +143,7 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
               </Form.Item>
               <Form.Item>
                 <Button type="primary" htmlType="submit" block size="large">
-                Get My Quote
+                  Get My Quote
                 </Button>
               </Form.Item>
             </Form>
