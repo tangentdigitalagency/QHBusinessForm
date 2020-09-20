@@ -7,7 +7,7 @@ class S6BusinessTypeAndEIN extends Component {
   onFinish = (values) => {
     this.props.nextStep();
     this.props.setBusinessType(values.Business_Type);
-    this.props.setEIN(values.EIN);
+    this.props.setEIN(values.EIN?"Yes":"No");
     console.log("Success:", values);
   };
 

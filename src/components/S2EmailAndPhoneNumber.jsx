@@ -7,15 +7,27 @@ class S2EmailAndPhoneNumber extends Component {
   state = {};
 
   onFinish = (values) => {
-    this.props.nextStep();
-    this.props.setBusinessPhone(values.Business_Phone);
+    
+    this.simplePhone(values.Business_Phone);
     this.props.setBusinessEmail(values.Business_Email);
     console.log("Success:", values);
+    this.props.nextStep();
   };
 
   onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+
+  simplePhone = (value) => {
+    const reg = /^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})/;
+    value = value.replace(reg, "$1$2$3")
+    if (reg.test(value)) {
+      this.props.setBusinessPhone(value);
+      console.log(value);
+    };
+
+  }
+
 
   render() {
     return (

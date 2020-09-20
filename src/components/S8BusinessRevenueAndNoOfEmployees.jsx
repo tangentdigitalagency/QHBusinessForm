@@ -1,12 +1,32 @@
 import React, { Component } from "react";
 import { Form,  Button,Input} from "antd";
 import CommonComponents from "./CommonComponents"; 
+import Axios from "axios";  
 
 class S8BusinessRevenueAndNoOfEmployees extends Component {
   onFinish = (values) => { 
     this.props.setRevenue(values.Revenue);
     this.props.setNumberOfEmployees(values.Number_Of_Employees);
     console.log("Success:", values);
+    this.PostDataOfBusinessInsurance(this.props.postData);
+    
+  };
+
+  PostDataOfBusinessInsurance = (postData) => {
+    console.log(postData);
+    Axios.post("https://leads.quotehound.com/genericPostlead.php", null, {
+      params: postData,
+    })
+      .then((res) => {  
+        console.log(res.data);
+        if(res.data==='Matched'){
+          this.props.lastStep();
+        }
+        this.props.lastStep();
+      })
+      .catch((err) => {
+        if (err) throw err;
+      });
   };
 
   onFinishFailed = (errorInfo) => {

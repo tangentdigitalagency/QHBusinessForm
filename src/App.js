@@ -31,37 +31,37 @@ class App extends Component {
       LeadiD_Token: "",
       Redirect_URL: "",
       SRC: "Internal_Business_Insurance",
-      Landing_Page: "",
+      Landing_Page: "quotehound.com",
       IP_Address: "",
       //s1 form fields
       First_Name: '',
-      Last_Name: '', 
+      Last_Name: '',
       //S2 form fields
       Business_Phone: '',
-      Business_Email: '', 
+      Business_Email: '',
       //s3 form fields
       Business_Name: '',
-      Business_Website:'', 
+      Business_Website: '',
       //s4 form fields
       Business_Address: '',
-      Business_City: '', 
+      Business_City: '',
       //s5 form fields
       Business_State: '',
-      Business_Zip: '', 
+      Business_Zip: '',
       //s6 form fields
       Business_Type: '',
       EIN: '',
-      EIN_Number:'', 
+      EIN_Number: '',
       //s7 form fields
-      Business_Profession:'',
-      Founded: '', 
+      Business_Profession: '',
+      Founded: '',
       // s8 form fields
       Revenue: '',
       Number_Of_Employees: ''
     },
   };
 
-  componentDidUpdate = () => {
+  UNSAFE_componentWillUpdate  = () => {
     console.log(this.state.postData);
   };
 
@@ -100,9 +100,9 @@ class App extends Component {
                   setFirstName={(v) => {
 
                     console.log(document.getElementById('leadid_token').value)
-							console.log(document.getElementsByTagName('script')[0].src)
-							this.setState({ postData: { ...this.state.postData, LeadiD_Token: document.getElementById('leadid_token').value, Trusted_Form_URL: document.getElementById('Trusted_Form_URL_0').value } })
-							console.log(document.getElementById('Trusted_Form_URL_0'));
+                    console.log(document.getElementsByTagName('script')[0].src)
+                    this.setState({ postData: { ...this.state.postData, LeadiD_Token: document.getElementById('leadid_token').value, Trusted_Form_URL: document.getElementById('Trusted_Form_URL_0').value } })
+                    console.log(document.getElementById('Trusted_Form_URL_0'));
 
                     this.setState({
                       postData: {
@@ -128,7 +128,7 @@ class App extends Component {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Business_Email:v
+                        Business_Email: v
                       }
                     });
                   }}
@@ -136,129 +136,131 @@ class App extends Component {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Business_Phone:v
+                        Business_Phone: v
                       }
                     });
                   }}
                 />
                 <S3BusinessNameAndWebsite
-                Business_Name={this.state.postData.Business_Name}
-                Business_Website={this.state.postData.Business_Website}
-                setBusinessName={(v) => {
-                  this.setState({
-                    postData: {
-                      ...this.state.postData,
-                      Business_Name:v
-                    }
-                  });
-                }}
-                setBusinessWebsite={(v) => {
-                  this.setState({
-                    postData: {
-                      ...this.state.postData,
-                      Business_Website:v
-                    }
-                  });
-                }}
+                  Business_Name={this.state.postData.Business_Name}
+                  Business_Website={this.state.postData.Business_Website}
+                  setBusinessName={(v) => {
+                    this.setState({
+                      postData: {
+                        ...this.state.postData,
+                        Business_Name: v
+                      }
+                    });
+                  }}
+                  setBusinessWebsite={(v) => {
+                    this.setState({
+                      postData: {
+                        ...this.state.postData,
+                        Business_Website: v
+                      }
+                    });
+                  }}
                 />
-                <S4AddressAndCity 
-                Business_Address={this.state.postData.Business_Address}
-                Business_City={this.state.postData.Business_City}
-                setBusinessAddress={(v) => {
-                  this.setState({
-                    postData: {
-                      ...this.state.postData,
-                      Business_Address:v
-                    }
-                  });
-                }}
-                setBusinessCity={(v) => {
-                  this.setState({
-                    postData: {
-                      ...this.state.postData,
-                      Business_City:v
-                    }
-                  });
-                }}
+                <S4AddressAndCity
+                  Business_Address={this.state.postData.Business_Address}
+                  Business_City={this.state.postData.Business_City}
+                  setBusinessAddress={(v) => {
+                    this.setState({
+                      postData: {
+                        ...this.state.postData,
+                        Business_Address: v
+                      }
+                    });
+                  }}
+                  setBusinessCity={(v) => {
+                    this.setState({
+                      postData: {
+                        ...this.state.postData,
+                        Business_City: v
+                      }
+                    });
+                  }}
                 />
-                <S5StateAndZip 
-                Business_State={this.state.postData.Business_State}
-                Business_Zip={this.state.postData.Business_Zip}
-                setBusinessState={(v) => {
-                  this.setState({
-                    postData: {
-                      ...this.state.postData,
-                      Business_State:v
-                    }
-                  });
-                }}
-                setBusinessZip={(v) => {
-                  this.setState({
-                    postData: {
-                      ...this.state.postData,
-                      Business_Zip:v
-                    }
-                  });
-                }}/>
-                <S6BusinessTypeAndEIN 
-                Business_Type={this.state.postData.Business_Type}
-                EIN={this.state.postData.EIN}
-                setBusinessType={(v) => {
-                  this.setState({
-                    postData: {
-                      ...this.state.postData,
-                      Business_Type:v
-                    }
-                  });
-                }}
-                setEIN={(v) => {
-                  this.setState({
-                    postData: {
-                      ...this.state.postData,
-                      EIN:v
-                    }
-                  });
-                }}/>
-                <S7BusinessProfessionAndYears 
-                Business_Profession={this.state.postData.Business_Profession}
-                Founded={this.state.postData.Founded}
-                setBusinessProfession={(v) => {
-                  this.setState({
-                    postData: {
-                      ...this.state.postData,
-                      Business_Profession:v
-                    }
-                  });
-                }}
-                setFounded={(v) => {
-                  this.setState({
-                    postData: {
-                      ...this.state.postData,
-                      Founded:v
-                    }
-                  });
-                }}/>
-                <S8BusinessRevenueAndNoOfEmployees 
-                Revenue={this.state.postData.Revenue}
-                Number_Of_Employees={this.state.postData.Number_Of_Employees}
-                setRevenue={(v) => {
-                  this.setState({
-                    postData: {
-                      ...this.state.postData,
-                      Revenue:v
-                    }
-                  });
-                }}
-                setNumberOfEmployees={(v) => {
-                  this.setState({
-                    postData: {
-                      ...this.state.postData,
-                      Number_Of_Employees:v
+                <S5StateAndZip
+                  Business_State={this.state.postData.Business_State}
+                  Business_Zip={this.state.postData.Business_Zip}
+                  setBusinessState={(v) => {
+                    this.setState({
+                      postData: {
+                        ...this.state.postData,
+                        Business_State: v
+                      }
+                    });
+                  }}
+                  setBusinessZip={(v) => {
+                    this.setState({
+                      postData: {
+                        ...this.state.postData,
+                        Business_Zip: v
+                      }
+                    });
+                  }} />
+                <S6BusinessTypeAndEIN
+                  Business_Type={this.state.postData.Business_Type}
+                  EIN={this.state.postData.EIN}
+                  setBusinessType={(v) => {
+                    this.setState({
+                      postData: {
+                        ...this.state.postData,
+                        Business_Type: v
+                      }
+                    });
+                  }}
+                  setEIN={(v) => {
+                    this.setState({
+                      postData: {
+                        ...this.state.postData,
+                        EIN: v
+                      }
+                    });
+                  }} />
+                <S7BusinessProfessionAndYears
+                  Business_Profession={this.state.postData.Business_Profession}
+                  Founded={this.state.postData.Founded}
+                  setBusinessProfession={(v) => {
+                    this.setState({
+                      postData: {
+                        ...this.state.postData,
+                        Business_Profession: v
+                      }
+                    });
+                  }}
+                  setFounded={(v) => {
+                    this.setState({
+                      postData: {
+                        ...this.state.postData,
+                        Founded: v
+                      }
+                    });
+                  }} />
+                <S8BusinessRevenueAndNoOfEmployees
+                  Revenue={this.state.postData.Revenue}
+                  Number_Of_Employees={this.state.postData.Number_Of_Employees}
+                  setRevenue={(v) => {
+                    this.setState({
+                      postData: {
+                        ...this.state.postData,
+                        Revenue: v
+                      }
+                    });
+                  }}
+                  setNumberOfEmployees={(v) => {
+                    this.setState({
+                      postData: {
+                        ...this.state.postData,
+                        Number_Of_Employees: v
 
-                    }
-                  });
-                }}/>
-                 <S9Final/>
+                      }
+                    });
+                  }}
+                  postData={this.state.postData}
+                />
+                <S9Final postData2={this.state.postData}/>
               </StepWizard>
             </div>
           </div>
