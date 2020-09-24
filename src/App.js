@@ -34,31 +34,31 @@ class App extends Component {
       Landing_Page: "quotehound.com",
       IP_Address: "",
       //s1 form fields
-      First_Name: 'as',
-      Last_Name: 'as',
+      First_Name: '',
+      Last_Name: '',
       //S2 form fields
-      Business_Phone: '1111111111',
-      Business_Email: 'test@gmail.com',
+      Business_Phone: '',
+      Business_Email: '',
       //s3 form fields
-      Business_Name: 'test',
-      Business_Website: 'test.com',
+      Business_Name: '',
+      Business_Website: '',
       //s4 form fields
-      Business_Address: 'ldsakjf',
-      Business_City: 'asdf',
+      Business_Address: '',
+      Business_City: '',
       //s5 form fields
-      Business_State: 'AK',
-      Business_Zip: '60610',
+      Business_State: '',
+      Business_Zip: '',
       //s6 form fields
-      Business_Type: 'Profession',
-      EIN: 'yes',
+      Business_Type: '',
+      EIN: '',
       EIN_Number: '',
       //s7 form fields
-      Business_Profession: 'asd',
-      Founded: '2012',
+      Business_Profession: '',
+      Founded: '',
       // s8 form fields
-      Revenue: '12121',
-      Number_Of_Employees: '11'
-    }, 
+      Revenue: '',
+      Number_Of_Employees: ''
+    },
   };
 
   UNSAFE_componentWillUpdate  = () => {

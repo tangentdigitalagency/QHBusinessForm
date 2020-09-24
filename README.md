@@ -10,7 +10,7 @@
 
 
 ### Netlify Server 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6690166b-4070-4c28-98e6-22ca69d9d5bc/deploy-status)](https://app.netlify.com/sites/quotehoundauto/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/72f9f5c6-17d8-4b5d-95e7-76c5b35d1150/deploy-status)](https://app.netlify.com/sites/qhbusiness/deploys)
 
 ## Available Scripts
 
