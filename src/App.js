@@ -16,7 +16,7 @@ import S5StateAndZip from "./components/S5StateAndZip";
 import S6BusinessTypeAndEIN from "./components/S6BusinessTypeAndEIN";
 import S7BusinessProfessionAndYears from "./components/S7BusinessProfessionAndYears";
 import S8BusinessRevenueAndNoOfEmployees from "./components/S8BusinessRevenueAndNoOfEmployees";
-import S9Final from "./components/S9Final.jsx";
+import S9Final from "./components/S9Final.jsx"; 
 class App extends Component {
   state = {
     postData: {
@@ -37,7 +37,7 @@ class App extends Component {
       First_Name: 'as',
       Last_Name: 'as',
       //S2 form fields
-      Business_Phone: '',
+      Business_Phone: '1111111111',
       Business_Email: 'test@gmail.com',
       //s3 form fields
       Business_Name: 'test',
@@ -49,8 +49,8 @@ class App extends Component {
       Business_State: 'AK',
       Business_Zip: '60610',
       //s6 form fields
-      Business_Type: '',
-      EIN: '',
+      Business_Type: 'Profession',
+      EIN: 'yes',
       EIN_Number: '',
       //s7 form fields
       Business_Profession: 'asd',
@@ -58,11 +58,11 @@ class App extends Component {
       // s8 form fields
       Revenue: '12121',
       Number_Of_Employees: '11'
-    },
+    }, 
   };
 
   UNSAFE_componentWillUpdate  = () => {
-    console.log(this.state.postData);
+    console.log(this.state);
   };
 
   render() {
@@ -94,7 +94,7 @@ class App extends Component {
           <div className="row">
             <div className="col">
               <StepWizard initialStep={1}>
-                <S1FirstAndLastName
+                 <S1FirstAndLastName
                   First_Name={this.state.postData.First_Name}
                   Last_Name={this.state.postData.Last_Name}
                   setFirstName={(v) => {
@@ -258,9 +258,10 @@ class App extends Component {
                       }
                     });
                   }}
+                   
                   postData={this.state.postData}
-                />
-                <S9Final postData2={this.state.postData}/>
+                />   
+                <S9Final  postData2={this.state.postData}/>
               </StepWizard>
             </div>
           </div>
