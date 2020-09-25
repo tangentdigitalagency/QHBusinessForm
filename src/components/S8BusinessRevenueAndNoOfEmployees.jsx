@@ -10,8 +10,6 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
     loading: false,
     response: ''
   }
-
-
   onFinish = (values) => {
     this.props.setRevenue(values.Revenue);
     this.props.setNumberOfEmployees(values.Number_Of_Employees);
@@ -19,13 +17,8 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
     this.setState({
       loading: true
     }, this.PostDataOfBusinessInsurance(this.props.postData));
-
   };
-  
- 
-
   PostDataOfBusinessInsurance = (postData) => {
-
     console.log(postData);
     Axios.post("https://leads.quotehound.com/genericPostlead.php", null, {
       params: postData,
@@ -51,17 +44,16 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
   onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
-  componentWillReceiveProps=()=>{
-    if(this.state.response!==''){
-      this.setState({response:''})
+  componentWillReceiveProps = () => {
+    if (this.state.response !== '') {
+      this.setState({ response: '' })
     }
   }
-  
-  
+
+
   render() {
     const { response, loading } = this.state
     return (
-
       <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
         <CommonComponents
           currentStep={this.props.currentStep}
@@ -74,12 +66,10 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
             align="center"
             style={{ paddingTop: "0px" }}
           >
-
             {loading ?
               <ProgressLottie /> :
               <React.Fragment>
                 {(response !== "") ? <h5>{response}
-                
                 </h5> :
                   <Form
                     name="basic"
@@ -110,8 +100,9 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
                         type="number"
                       />
                     </Form.Item>
-                    <h5>Number Of Employees
-              </h5>
+                    <h5>
+                      Number Of Employees
+                    </h5>
                     <Form.Item
                       name="Number_Of_Employees"
                       hasFeedback
@@ -146,7 +137,7 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
                         signature is not a condition of purchasing any property,
                         goods, or services and that I may revoke my consent at any
                         time.
-                </p>
+                      </p>
                     </Form.Item>
                     <Form.Item>
                       <Button type="primary" htmlType="submit" block size="large">
@@ -156,7 +147,6 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
                   </Form>
                 }
               </React.Fragment>
-
             }
           </div>
         </div>

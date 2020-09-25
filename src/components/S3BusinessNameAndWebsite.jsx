@@ -66,11 +66,7 @@ class S3BusinessNameAndWebsite extends Component {
               <Form.Item
                 name="Business_Website"
                 hasFeedback
-                rules={[
-                  {
-                    required: true,
-                    message: "Please Enter Your Website",
-                  },
+                rules={[ 
                   {
                     pattern: /^(https?:\/\/)?(www\.)?([a-zA-Z0-9]+(-?[a-zA-Z0-9])*\.)+[\w]{2,}(\/\S*)?$/i,
                     message: "Please Enter Valid Website",
