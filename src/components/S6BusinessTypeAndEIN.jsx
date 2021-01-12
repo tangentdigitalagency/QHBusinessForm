@@ -6,8 +6,8 @@ const {Option}=Select;
 class S6BusinessTypeAndEIN extends Component {
   onFinish = (values) => {
     this.props.nextStep();
-    this.props.setBusinessType(values.Business_Type);
-    this.props.setEIN(values.EIN?"Yes":"No");
+    this.props.setBusinessType(values.business_structure);
+    this.props.setEIN(values.ein?"Yes":"No");
     console.log("Success:", values);
   };
 
@@ -33,8 +33,8 @@ class S6BusinessTypeAndEIN extends Component {
               className="mywidth"
               onFinish={this.onFinish}
               initialValues={{
-                Business_Type: this.props.Business_Type,
-                Last_Name: this.props.Last_Name
+                business_structure: this.props.business_structure,
+                last_name: this.props.last_name
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -42,7 +42,7 @@ class S6BusinessTypeAndEIN extends Component {
               <br />
               <h5>Business Type</h5>
               <Form.Item
-                name="Business_Type"
+                name="business_structure"
                 hasFeedback
                 rules={[
                   {
@@ -51,21 +51,21 @@ class S6BusinessTypeAndEIN extends Component {
                   }
                 ]}
               >
-                <Select name="Business_Type" size="large">
+                <Select name="business_structure" size="large">
                   <Option value="">What Is your Business Type?</Option>
-                  <Option name="" value="Sole Prop/Individual">Individual / Sole Proprieter</Option>
-                  <Option name="" value="Joint">Joint Venture</Option>
+                  <Option name="" value="Individual / Sole Proprietor">Individual / Sole Proprieter</Option>
+                  <Option name="" value="Joint Venture">Joint Venture</Option>
                   <Option name="" value="LLC">LLC</Option>
                   <Option name="" value="Partnership">Partnership</Option>
                   <Option name="" value="Trust">Trust</Option>
-                  <Option name="" value="Corporation/Other">Corporation/other</Option>
+                  <Option name="" value="Corporation / Other">Corporation/other</Option>
                 </Select>
               </Form.Item>
               <h5>
                 Do You Have A EIN? (Federal Tax ID Number)
               </h5>
               <Form.Item
-                name="EIN"
+                name="ein"
                 hasFeedback
               >
                 <BootstrapSwitchButton

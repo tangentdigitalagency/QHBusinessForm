@@ -5,8 +5,8 @@ import CommonComponents from "./CommonComponents";
 class S3BusinessNameAndWebsite extends Component {
   onFinish = (values) => {
     this.props.nextStep();
-    this.props.setBusinessName(values.Business_Name);
-    this.props.setBusinessWebsite(values.Business_Website);
+    this.props.setBusinessName(values.legal_business_name);
+    this.props.setBusinessWebsite(values.business_website);
     console.log("Success:", values);
   };
 
@@ -35,8 +35,8 @@ class S3BusinessNameAndWebsite extends Component {
               className="mywidth"
               onFinish={this.onFinish}
               initialValues={{
-                Business_Name: this.props.Business_Name,
-                Business_Website: this.props.Business_Website
+                legal_business_name: this.props.legal_business_name,
+                business_website: this.props.business_website
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -44,7 +44,7 @@ class S3BusinessNameAndWebsite extends Component {
               <br />
               <h5>Legal Business Name</h5>
               <Form.Item
-                name="Business_Name"
+                name="legal_business_name"
                 hasFeedback
                 rules={[
                   {
@@ -64,7 +64,7 @@ class S3BusinessNameAndWebsite extends Component {
               <h5>Website (Optional)
               </h5>
               <Form.Item
-                name="Business_Website"
+                name="business_website"
                 hasFeedback
                 rules={[ 
                   {

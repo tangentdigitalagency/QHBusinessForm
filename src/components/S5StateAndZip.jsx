@@ -6,8 +6,8 @@ const {Option} = Select;
 class S5StateAndZip extends Component {
   onFinish = (values) => {
     this.props.nextStep();
-    this.props.setBusinessState(values.Business_State);
-    this.props.setBusinessZip(values.Business_Zip);
+    this.props.setBusinessState(values.state);
+    this.props.setBusinessZip(values.zip_code);
     console.log("Success:", values);
   };
 
@@ -33,8 +33,8 @@ class S5StateAndZip extends Component {
               className="mywidth"
               onFinish={this.onFinish}
               initialValues={{
-                Business_State: this.props.Business_State,
-                Business_Zip: this.props.Business_Zip
+                state: this.props.state,
+                zip_code: this.props.zip_code
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -42,7 +42,7 @@ class S5StateAndZip extends Component {
               <br />
               <h5>State</h5>
               <Form.Item
-                name="Business_State"
+                name="state"
                 hasFeedback
                 rules={[
                   {
@@ -54,7 +54,7 @@ class S5StateAndZip extends Component {
                   }
                 ]}
               >
-                <Select size="large" name="Business_State" >
+                <Select size="large" name="state" >
                   <Option disabled="" selected="" value=""> -- select a state -- </Option>
                   <Option value="AL">AL</Option>
                   <Option value="AK">AK</Option>
@@ -112,7 +112,7 @@ class S5StateAndZip extends Component {
               <h5>Zip
               </h5>
               <Form.Item
-                name="Business_Zip"
+                name="zip_code"
                 hasFeedback
                 rules={[
                   {

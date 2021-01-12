@@ -8,8 +8,8 @@ class S2EmailAndPhoneNumber extends Component {
 
   onFinish = (values) => {
     
-    this.simplePhone(values.Business_Phone);
-    this.props.setBusinessEmail(values.Business_Email);
+    this.simplePhone(values.phone_home);
+    this.props.setBusinessEmail(values.email_address);
     console.log("Success:", values);
     this.props.nextStep();
   };
@@ -48,8 +48,8 @@ class S2EmailAndPhoneNumber extends Component {
               className="mywidth"
               onFinish={this.onFinish}
               initialValues={{
-                Business_Phone: this.props.Business_Phone,
-                Business_Email: this.props.Business_Email
+                phone_home: this.props.phone_home,
+                email_address: this.props.email_address
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -57,7 +57,7 @@ class S2EmailAndPhoneNumber extends Component {
               <br />
               <h5>Phone Number</h5>
               <Form.Item
-                name="Business_Phone"
+                name="phone_home"
                 hasFeedback
                 rules={
                   [
@@ -74,7 +74,7 @@ class S2EmailAndPhoneNumber extends Component {
                     value = value.replace(reg, "($1) $2-$3")
                     if (reg.test(value)) {
                       this.formRef.current.setFieldsValue({
-                        Business_Phone: value,
+                        phone_home: value,
                       });
                       console.log(value);
                     }
@@ -89,7 +89,7 @@ class S2EmailAndPhoneNumber extends Component {
               <h5>Email</h5>
               <Form.Item
                 value={this.props.Email}
-                name="Business_Email"
+                name="email_address"
                 hasFeedback
                 rules={[
                   {

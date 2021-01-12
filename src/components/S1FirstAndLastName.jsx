@@ -5,8 +5,8 @@ import CommonComponents from "./CommonComponents";
 class S1FirstAndLastName extends Component {
   onFinish = (values) => {
     this.props.nextStep();
-    this.props.setFirstName(values.First_Name);
-    this.props.setLastName(values.Last_Name);
+    this.props.setFirstName(values.first_name);
+    this.props.setLastName(values.last_name);
     console.log("Success:", values);
   };
 
@@ -32,8 +32,8 @@ class S1FirstAndLastName extends Component {
               className="mywidth"
               onFinish={this.onFinish}
               initialValues={{
-                First_Name: this.props.First_Name,
-                Last_Name: this.props.Last_Name
+                first_name: this.props.first_name,
+                last_name: this.props.last_name
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -41,7 +41,7 @@ class S1FirstAndLastName extends Component {
               <br />
               <h5>First Name</h5>
               <Form.Item
-                name="First_Name"
+                name="first_name"
                 hasFeedback
                 rules={[
                   {
@@ -61,7 +61,7 @@ class S1FirstAndLastName extends Component {
               </Form.Item>
               <h5>Last Name</h5>
               <Form.Item
-                name="Last_Name"
+                name="last_name"
                 hasFeedback
                 rules={[
                   {

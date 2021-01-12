@@ -11,8 +11,8 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
     response: ''
   }
   onFinish = (values) => {
-    this.props.setRevenue(values.Revenue);
-    this.props.setNumberOfEmployees(values.Number_Of_Employees);
+    this.props.setRevenue(values.	annual_revenue_over_next_12_months);
+    this.props.setNumberOfEmployees(values.number_of_employees);
     console.log("Success:", values);
     this.setState({
       loading: true
@@ -20,7 +20,7 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
   };
   PostDataOfBusinessInsurance = (postData) => {
     console.log(postData);
-    Axios.post("https://leads.quotehound.com/genericPostlead.php", null, {
+    Axios.post("https://quotehound.leadspediatrack.com/post.do", null, {
       params: postData,
     })
       .then((res) => {
@@ -76,8 +76,8 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
                     className="mywidth"
                     onFinish={this.onFinish}
                     initialValues={{
-                      Revenue: this.props.Revenue,
-                      Number_Of_Employees: this.props.Number_Of_Employees
+                      annual_revenue_over_next_12_months: this.props.annual_revenue_over_next_12_months,
+                      number_of_employees: this.props.number_of_employees
                     }}
                     onFinishFailed={this.onFinishFailed}
                   >
@@ -85,7 +85,7 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
                     <br />
                     <h5>What Is Your Annual Revenue Over The Next 12 Months</h5>
                     <Form.Item
-                      name="Revenue"
+                      name="annual_revenue_over_next_12_months"
                       hasFeedback
                       rules={[
                         {
@@ -104,7 +104,7 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
                       Number Of Employees
                     </h5>
                     <Form.Item
-                      name="Number_Of_Employees"
+                      name="number_of_employees"
                       hasFeedback
                       rules={[
                         {

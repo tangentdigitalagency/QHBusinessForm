@@ -5,8 +5,8 @@ import CommonComponents from "./CommonComponents";
 class S4AddressAndCity extends Component {
   onFinish = (values) => {
     this.props.nextStep();
-    this.props.setBusinessAddress(values.Business_Address);
-    this.props.setBusinessCity(values.Business_City);
+    this.props.setBusinessAddress(values.address);
+    this.props.setBusinessCity(values.city);
     console.log("Success:", values);
   };
 
@@ -32,8 +32,8 @@ class S4AddressAndCity extends Component {
               className="mywidth"
               onFinish={this.onFinish}
               initialValues={{
-                Business_Address: this.props.Business_Address,
-                Business_City: this.props.Business_City
+                address: this.props.address,
+                city: this.props.city
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -41,7 +41,7 @@ class S4AddressAndCity extends Component {
               <br />
               <h5>Addess</h5>
               <Form.Item
-                name="Business_Address"
+                name="address"
                 hasFeedback
                 rules={[
                   {
@@ -61,7 +61,7 @@ class S4AddressAndCity extends Component {
               <h5>City
               </h5>
               <Form.Item
-                name="Business_City"
+                name="city"
                 hasFeedback
                 rules={[
                   {

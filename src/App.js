@@ -21,43 +21,45 @@ class App extends Component {
   state = {
     postData: {
       //extra entries
+      lp_campaign_id:"5fe10f48a0ba0",
+      lp_campaign_key:"vfB6nWKXFx9L3jPyZc7t",
       Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
       TYPE: "38",
       Sub_ID: "12",
       Pub_ID: "13",
       TCPA_Consent: "Yes",
       TCPA_Language: "By clicking Get My Quote I provide my electronic signature and express written consent to telemarketing calls, text messages, emails, and postal mail from this Web site, our marketing and re-marketing network, and up to eight insurance companies or their affiliates or representatives at the phone number (including wireless number), email address, and postal address provided by me. I consent to calls and text messages transmitting insurance quotes, or seeking related additional information from me, using an Automatic Telephone Dialing System or prerecorded or artificial voices. I consent that my signature is not a condition of purchasing any property, goods, or services and that I may revoke my consent at any time.",
-      Trusted_Form_URL: "",
-      LeadiD_Token: "",
+      trusted_form_cert_id: "",
+      jornaya_lead_id: "",
       Redirect_URL: "",
       SRC: "Internal_Business_Insurance",
       Landing_Page: "quotehound.com",
       IP_Address: "",
       //s1 form fields
-      First_Name: '',
-      Last_Name: '',
+      first_name: '',
+      last_name: '',
       //S2 form fields
-      Business_Phone: '',
-      Business_Email: '',
+      phone_home: '',
+      email_address: '',
       //s3 form fields
-      Business_Name: '',
-      Business_Website: '',
+      legal_business_name: '',
+      business_website: '',
       //s4 form fields
-      Business_Address: '',
-      Business_City: '',
+      address: '',
+      city: '',
       //s5 form fields
-      Business_State: '',
-      Business_Zip: '',
+      state: '',
+      zip_code: '',
       //s6 form fields
-      Business_Type: '',
-      EIN: '',
+      business_structure: '',
+      ein: '',
       EIN_Number: '',
       //s7 form fields
-      Business_Profession: '',
-      Founded: '',
+      business_profession: '',
+      year_business_founded: '',
       // s8 form fields
-      Revenue: '',
-      Number_Of_Employees: ''
+      annual_revenue_over_next_12_months: '',
+      number_of_employees: ''
     },
   };
 
@@ -95,19 +97,19 @@ class App extends Component {
             <div className="col">
               <StepWizard initialStep={1}>
                  <S1FirstAndLastName
-                  First_Name={this.state.postData.First_Name}
-                  Last_Name={this.state.postData.Last_Name}
+                  first_name={this.state.postData.first_name}
+                  last_name={this.state.postData.last_name}
                   setFirstName={(v) => {
 
-                    console.log(document.getElementById('leadid_token').value)
+                    console.log(document.getElementById('jornaya_lead_id').value)
                     console.log(document.getElementsByTagName('script')[0].src)
-                    this.setState({ postData: { ...this.state.postData, LeadiD_Token: document.getElementById('leadid_token').value, Trusted_Form_URL: document.getElementById('Trusted_Form_URL_0').value } })
-                    console.log(document.getElementById('Trusted_Form_URL_0'));
+                    this.setState({ postData: { ...this.state.postData, jornaya_lead_id: document.getElementById('jornaya_lead_id').value, trusted_form_cert_id: document.getElementById('trusted_form_cert_id_0').value } })
+                    console.log(document.getElementById('trusted_form_cert_id_0'));
 
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        First_Name: v
+                        first_name: v
                       }
                     });
                   }}
@@ -115,20 +117,20 @@ class App extends Component {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Last_Name: v
+                        last_name: v
                       }
                     });
                   }}
 
                 />
                 <S2EmailAndPhoneNumber
-                  Business_Email={this.state.postData.Business_Email}
-                  Business_Phone={this.state.postData.Business_Phone}
+                  email_address={this.state.postData.email_address}
+                  phone_home={this.state.postData.phone_home}
                   setBusinessEmail={(v) => {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Business_Email: v
+                        email_address: v
                       }
                     });
                   }}
@@ -136,19 +138,19 @@ class App extends Component {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Business_Phone: v
+                        phone_home: v
                       }
                     });
                   }}
                 />
                 <S3BusinessNameAndWebsite
-                  Business_Name={this.state.postData.Business_Name}
-                  Business_Website={this.state.postData.Business_Website}
+                  legal_business_name={this.state.postData.legal_business_name}
+                  business_website={this.state.postData.business_website}
                   setBusinessName={(v) => {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Business_Name: v
+                        legal_business_name: v
                       }
                     });
                   }}
@@ -156,19 +158,19 @@ class App extends Component {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Business_Website: v
+                        business_website: v
                       }
                     });
                   }}
                 />
                 <S4AddressAndCity
-                  Business_Address={this.state.postData.Business_Address}
-                  Business_City={this.state.postData.Business_City}
+                  address={this.state.postData.address}
+                  city={this.state.postData.city}
                   setBusinessAddress={(v) => {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Business_Address: v
+                        address: v
                       }
                     });
                   }}
@@ -176,19 +178,19 @@ class App extends Component {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Business_City: v
+                        city: v
                       }
                     });
                   }}
                 />
                 <S5StateAndZip
-                  Business_State={this.state.postData.Business_State}
-                  Business_Zip={this.state.postData.Business_Zip}
+                  state={this.state.postData.state}
+                  zip_code={this.state.postData.zip_code}
                   setBusinessState={(v) => {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Business_State: v
+                        state: v
                       }
                     });
                   }}
@@ -196,18 +198,18 @@ class App extends Component {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Business_Zip: v
+                        zip_code: v
                       }
                     });
                   }} />
                 <S6BusinessTypeAndEIN
-                  Business_Type={this.state.postData.Business_Type}
-                  EIN={this.state.postData.EIN}
+                  business_structure={this.state.postData.business_structure}
+                  ein={this.state.postData.ein}
                   setBusinessType={(v) => {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Business_Type: v
+                        business_structure: v
                       }
                     });
                   }}
@@ -215,37 +217,37 @@ class App extends Component {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        EIN: v
+                        ein: v
                       }
                     });
                   }} />
                 <S7BusinessProfessionAndYears
-                  Business_Profession={this.state.postData.Business_Profession}
-                  Founded={this.state.postData.Founded}
+                  business_profession={this.state.postData.business_profession}
+                  year_business_founded={this.state.postData.year_business_founded}
                   setBusinessProfession={(v) => {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Business_Profession: v
+                        business_profession: v
                       }
                     });
                   }}
-                  setFounded={(v) => {
+                  setyear_business_founded={(v) => {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Founded: v
+                        year_business_founded: v
                       }
                     });
                   }} />
                 <S8BusinessRevenueAndNoOfEmployees
-                  Revenue={this.state.postData.Revenue}
-                  Number_Of_Employees={this.state.postData.Number_Of_Employees}
+                  annual_revenue_over_next_12_months={this.state.postData.	annual_revenue_over_next_12_months}
+                  number_of_employees={this.state.postData.number_of_employees}
                   setRevenue={(v) => {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Revenue: v
+                        annual_revenue_over_next_12_months: v
                       }
                     });
                   }}
@@ -253,7 +255,7 @@ class App extends Component {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        Number_Of_Employees: v
+                        number_of_employees: v
 
                       }
                     });

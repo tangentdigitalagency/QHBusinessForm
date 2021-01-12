@@ -5,8 +5,8 @@ import CommonComponents from "./CommonComponents";
 class S7BusinessProfessionAndYears extends Component {
   onFinish = (values) => {
     this.props.nextStep();
-    this.props.setBusinessProfession(values.Business_Profession);
-    this.props.setFounded(values.Founded);
+    this.props.setBusinessProfession(values.business_profession);
+    this.props.setyear_business_founded(values.year_business_founded);
     console.log("Success:", values);
   };
 
@@ -32,8 +32,8 @@ class S7BusinessProfessionAndYears extends Component {
               className="mywidth"
               onFinish={this.onFinish}
               initialValues={{
-                Business_Profession: this.props.Business_Profession,
-                Founded: this.props.Founded
+                business_profession: this.props.business_profession,
+                year_business_founded: this.props.year_business_founded
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -42,7 +42,7 @@ class S7BusinessProfessionAndYears extends Component {
               <h5>What Is Your Business Profession?
 </h5>
               <Form.Item
-                name="Business_Profession"
+                name="business_profession"
                 hasFeedback
                 rules={[
                   {
@@ -63,7 +63,7 @@ class S7BusinessProfessionAndYears extends Component {
               What Year Was Your Business Founded?
               </h5>
               <Form.Item
-                name="Founded"
+                name="year_business_founded"
                 hasFeedback
                 rules={[
                   {
