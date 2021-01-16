@@ -85,7 +85,7 @@ class App extends Component {
           </ul>
           <ul className="nav nav-fill mx-2 w-sm-100">
             <li className="nav-item">
-              <Button type="primary" size="middle" icon={<PhoneOutlined rotate="90" />} >
+              <Button type="primary" size="middle" icon={<PhoneOutlined rotate="90" />} href={"tel:+18554344762"} >
                 (855) 434-4762
               </Button>
             </li>
