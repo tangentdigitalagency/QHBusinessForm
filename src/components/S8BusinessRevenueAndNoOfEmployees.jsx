@@ -30,7 +30,9 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
             loading: false,
           },() => {
             this.props.nextStep();
+
           this.props.callMediaAlpha();
+        
           });
         }
       })

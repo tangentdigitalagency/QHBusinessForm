@@ -71,16 +71,31 @@ class App extends Component {
       address: this.state.address,
       zip: this.state.zip_code,
     };
+    // window.MediaAlphaExchange = {
+    //   placement_id: "4yclnD1Pz-JicFFmiW0DhV7a86VXHw",
+    //   sub_1: "test sub id",
+    //   type: "ad_unit",
+    //   version: 17,
+    //   data: tempArray,
+    // };
+    // window.MediaAlphaExchange__load("target");
+    // console.log("hello")
+
     window.MediaAlphaExchange = {
-      placement_id: "4yclnD1Pz-JicFFmiW0DhV7a86VXHw",
-      sub_1: "test sub id",
-      type: "ad_unit",
-      version: 17,
-      data: tempArray,
-    };
-    //window.MediaAlphaExchange__load("target");
-    //console.log("hello")
+      "data": {
+         "zip": "90210"
+      },
+      "placement_id": "3lYU7xIApFzLYwijXxsv88dhUoSiaA",
+      "sub_1": "test sub id",
+      "type": "ad_unit",
+      "version": 17
+   };
+   window.MediaAlphaExchange__load("target");
+   console.log("hello")
+   
   }
+
+
 
   UNSAFE_componentWillUpdate  = () => {
     console.log(this.state);
