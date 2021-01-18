@@ -17,6 +17,7 @@ import S6BusinessTypeAndEIN from "./components/S6BusinessTypeAndEIN";
 import S7BusinessProfessionAndYears from "./components/S7BusinessProfessionAndYears";
 import S8BusinessRevenueAndNoOfEmployees from "./components/S8BusinessRevenueAndNoOfEmployees";
 import S9Final from "./components/S9Final.jsx"; 
+import S10Media from "./components/S10Media";
 class App extends Component {
   state = {
     postData: {
@@ -62,6 +63,24 @@ class App extends Component {
       number_of_employees: ''
     },
   };
+
+  callMediaAlpha = () => {
+    var tempArray = {
+    email: this.state.email_address,
+      phone: this.state.phone_home,
+      address: this.state.address,
+      zip: this.state.zip_code,
+    };
+    window.MediaAlphaExchange = {
+      placement_id: "4yclnD1Pz-JicFFmiW0DhV7a86VXHw",
+      sub_1: "test sub id",
+      type: "ad_unit",
+      version: 17,
+      data: tempArray,
+    };
+    //window.MediaAlphaExchange__load("target");
+    //console.log("hello")
+  }
 
   UNSAFE_componentWillUpdate  = () => {
     console.log(this.state);
@@ -243,6 +262,7 @@ class App extends Component {
                 <S8BusinessRevenueAndNoOfEmployees
                   annual_revenue_over_next_12_months={this.state.postData.	annual_revenue_over_next_12_months}
                   number_of_employees={this.state.postData.number_of_employees}
+                  callMediaAlpha={this.callMediaAlpha}
                   setRevenue={(v) => {
                     this.setState({
                       postData: {
@@ -263,7 +283,7 @@ class App extends Component {
                    
                   postData={this.state.postData}
                 />   
-                <S9Final  postData2={this.state.postData}/>
+                <S10Media  postData2={this.state.postData}/>
               </StepWizard>
             </div>
           </div>

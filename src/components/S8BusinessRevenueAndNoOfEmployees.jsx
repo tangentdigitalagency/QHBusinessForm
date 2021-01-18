@@ -24,16 +24,14 @@ class S8BusinessRevenueAndNoOfEmployees extends Component {
       params: postData,
     })
       .then((res) => {
-        var xml = new XMLParser().parseFromString(res.data);
-        if (xml.children[0].value === 'Error') {
+        console.log(res)
+        if (res.status === 200) {
           this.setState({
             loading: false,
-            response: xml.children[1].value
+          },() => {
+            this.props.nextStep();
+          this.props.callMediaAlpha();
           });
-          console.log(xml.children[1].value);
-        }
-        else if (xml.children[0].value === 'Matched' || xml.children[0].value === 'Unmatched') {
-          this.props.lastStep();
         }
       })
       .catch((err) => {
