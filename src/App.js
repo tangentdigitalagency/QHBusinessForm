@@ -39,7 +39,7 @@ class App extends Component {
       //s1 form fields
       first_name: '',
       last_name: '',
-      gclid: "", vvv
+      gclid: "", 
       //S2 form fields
       phone_home: '',
       email_address: '',
