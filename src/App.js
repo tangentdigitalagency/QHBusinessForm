@@ -39,6 +39,7 @@ class App extends Component {
       //s1 form fields
       first_name: '',
       last_name: '',
+      gclid: "", vvv
       //S2 form fields
       phone_home: '',
       email_address: '',
@@ -134,10 +135,10 @@ class App extends Component {
                   first_name={this.state.postData.first_name}
                   last_name={this.state.postData.last_name}
                   setFirstName={(v) => {
-
+                  
                     console.log(document.getElementById('jornaya_lead_id').value)
                     console.log(document.getElementsByTagName('script')[0].src)
-                    this.setState({ postData: { ...this.state.postData, jornaya_lead_id: document.getElementById('jornaya_lead_id').value, trusted_form_cert_id: document.getElementById('trusted_form_cert_id_0').value } })
+                    this.setState({ postData: { ...this.state.postData, jornaya_lead_id: document.getElementById('jornaya_lead_id').value, trusted_form_cert_id: document.getElementById('trusted_form_cert_id_0').value,   gclid: document.getElementById("gclid_field").value } })
                     console.log(document.getElementById('trusted_form_cert_id_0'));
 
                     this.setState({
