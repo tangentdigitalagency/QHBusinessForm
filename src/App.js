@@ -322,8 +322,11 @@ class App extends Component {
                   <p className="footerText1" >Free Business Insurance Quotes</p>
                 </Grid>
                 <Grid item xs={12}>
-                  <p className="footerText2" style={{textAlign:"center"}}>
-                  A business owners policy includes protection for all major property and liability risk in one package. Offers protection to business owners against property damage, peril, business interruption, and liability. Get a free quote with Quotehounf today and see if your business qualifies for Business Owners Policy. <br/> These policies are better suited for smaller businesses as they have more personal financial exposure in the event of a loss. As a business owner, you must ensure that all aspects of your business are covered. From property damage to legal liabilities to employee-related risk. At Quotehound, we offer the best coverage available for your business. Get your free quote today and check out what would be the best fit for your business. 
+                  <p className="footerText2" style={{textAlign:"left"}}>
+                  A business owners policy includes protection for all major property and liability risk in one package. Offers protection to business owners against property damage, peril, business interruption, and liability. Get a free quote with Quotehound today and see if your business qualifies for Business Owners Policy. <br/> These policies are better suited for smaller businesses as they have more personal financial exposure in the event of a loss. As a business owner, you must ensure that all aspects of your business are covered. From property damage to legal liabilities to employee-related risk. At Quotehound, we offer the best coverage available for your business. Get your free quote today and check out what would be the best fit for your business. 
+                  </p>
+                  <p>
+                  The idea of insurance for businesses is simple: you pay a set amount in the form of an insurance premium, generally either monthly or once a year.  In return, you may be able to avoid paying a much larger amount if something unexpected happens. Of course, business insurance limits that concept to your business. If an accident happens while you’re working or someone blames your business for damage, your local business insurance could take care of the problem so that the cost doesn’t come out of your company’s budget.
                   </p>
                 </Grid>
           </Grid>
