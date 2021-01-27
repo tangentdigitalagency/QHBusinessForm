@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "antd/dist/antd.css";
 import "./App.css";
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import Grid from "@material-ui/core/Grid";
 import Logo from "./Assets/logo.png";
 import { Button, Typography } from "antd";
@@ -18,6 +19,7 @@ import S7BusinessProfessionAndYears from "./components/S7BusinessProfessionAndYe
 import S8BusinessRevenueAndNoOfEmployees from "./components/S8BusinessRevenueAndNoOfEmployees";
 import S9Final from "./components/S9Final.jsx"; 
 import S10Media from "./components/S10Media";
+
 class App extends Component {
   state = {
     postData: {
@@ -304,6 +306,28 @@ class App extends Component {
             </div>
           </div>
         </div>
+
+        <Grid className="footp" container xs={12} style={{paddingLeft:'10vw',paddingRight:'10vw' }}>
+          <Grid item md={6} xs={12} style={{display: 'flex', justifyContent: 'center'}}>
+          <Player
+  autoplay={true}
+  loop={true}
+  src="https://assets7.lottiefiles.com/packages/lf20_nmq2xndp.json"
+  style={{ height: '400px', width: '400px' }}
+>
+</Player>
+          </Grid>
+          <Grid item md={6} xs={12}>
+                <Grid item xs={12}>
+                  <p className="footerText1" >Free Business Insurance Quotes</p>
+                </Grid>
+                <Grid item xs={12}>
+                  <p className="footerText2" style={{textAlign:"center"}}>
+                  A business owners policy includes protection for all major property and liability risk in one package. Offers protection to business owners against property damage, peril, business interruption, and liability. Get a free quote with Quotehounf today and see if your business qualifies for Business Owners Policy. <br/> These policies are better suited for smaller businesses as they have more personal financial exposure in the event of a loss. As a business owner, you must ensure that all aspects of your business are covered. From property damage to legal liabilities to employee-related risk. At Quotehound, we offer the best coverage available for your business. Get your free quote today and check out what would be the best fit for your business. 
+                  </p>
+                </Grid>
+          </Grid>
+        </Grid>
 
         <Grid
           container
